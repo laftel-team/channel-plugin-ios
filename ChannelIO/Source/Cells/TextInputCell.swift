@@ -35,17 +35,17 @@ final class TextInputCell: BaseTableViewCell {
     self.contentView.addSubview(self.editImageView)
   }
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
+  override func setLayouts() {
+    super.setLayouts()
     
-    self.textField.snp.remakeConstraints { [weak self] (make) in
+    self.textField.snp.makeConstraints { [weak self] (make) in
       make.leading.equalToSuperview().inset(16)
       make.top.equalToSuperview()
       make.bottom.equalToSuperview()
       make.trailing.equalTo((self?.editImageView.snp.leading)!).offset(10)
     }
     
-    self.editImageView.snp.remakeConstraints { (make) in
+    self.editImageView.snp.makeConstraints { (make) in
       make.trailing.equalToSuperview().inset(14)
       make.centerY.equalToSuperview()
       make.size.equalTo(CGSize(width: 24, height: 24))

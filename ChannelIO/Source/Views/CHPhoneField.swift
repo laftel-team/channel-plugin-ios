@@ -143,8 +143,8 @@ final class CHPhoneField: BaseView {
     self.addSubview(self.bottomDivider)
   }
   
-  override func layoutSubviews(){
-    super.layoutSubviews()
+  override func setLayouts() {
+    super.setLayouts()
     
     self.countryCodeView.snp.makeConstraints { (make) in
       make.width.lessThanOrEqualTo(90)

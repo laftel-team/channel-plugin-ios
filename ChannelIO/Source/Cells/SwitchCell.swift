@@ -33,15 +33,15 @@ final class SwitchCell : BaseTableViewCell, Reusable {
     self.addSubview(self.onOffSwitch)
   }
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    
-    self.titleLabel.snp.remakeConstraints { (make) in
+  override func setLayouts() {
+    super.setLayouts()
+
+    self.titleLabel.snp.makeConstraints { (make) in
       make.centerY.equalToSuperview()
       make.leading.equalToSuperview().inset(16)
     }
     
-    self.onOffSwitch.snp.remakeConstraints { (make) in
+    self.onOffSwitch.snp.makeConstraints { (make) in
       make.centerY.equalToSuperview()
       make.trailing.equalToSuperview().inset(10)
     }

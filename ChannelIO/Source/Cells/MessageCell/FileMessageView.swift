@@ -107,8 +107,8 @@ class FileMessageView : BaseView {
   
   //MARK: layout
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
+  override func setLayouts() {
+    super.setLayouts()
     
     self.imageView.snp.makeConstraints { (make) in
       make.size.equalTo(CGSize(width:33, height:42))

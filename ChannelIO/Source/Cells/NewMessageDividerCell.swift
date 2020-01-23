@@ -30,10 +30,10 @@ final class NewMessageDividerCell: BaseTableViewCell, Reusable {
     self.containerView.addSubview(self.titleLabel)
   }
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
+  override func setLayouts() {
+    super.setLayouts()
     
-    self.containerView.snp.remakeConstraints { (make) in
+    self.containerView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview().inset(UIEdgeInsets(top:18, left:0, bottom:0, right:0))
     }
     

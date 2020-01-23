@@ -119,8 +119,8 @@ class MediaMessageView : BaseView {
     }
   }
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
+  override func setLayouts() {
+    super.setLayouts()
     
     self.imageView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
@@ -147,7 +147,7 @@ class MediaMessageView : BaseView {
       make.centerY.equalToSuperview()
     }
   }
-  
+
   func setProgress(value: CGFloat) {
     self.progressView.progress = Double(value)
   }

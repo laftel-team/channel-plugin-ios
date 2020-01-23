@@ -46,9 +46,9 @@ class UserChatsEmptyView: BaseView {
 
   // MARK: Layout
 
-  override func layoutSubviews() {
-    super.layoutSubviews()
-
+  override func setLayouts() {
+    super.setLayouts()
+    
     self.imageView.snp.remakeConstraints { (make) in
       make.size.equalTo(CGSize(width: 80, height: 80))
       make.bottom.equalTo(self.snp.centerY)

@@ -39,8 +39,8 @@ final class CheckableLabelCell : BaseTableViewCell, Reusable {
     self.addSubview(self.checkImageView)
   }
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
+  override func setLayouts() {
+    super.setLayouts()
     
     self.titleLabel.snp.remakeConstraints { (make) in
       make.centerY.equalToSuperview()
