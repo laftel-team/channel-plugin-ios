@@ -131,7 +131,7 @@ class FileStatusCell: BaseTableViewCell {
     if item.status == .error {
       self.errorButton.isHidden = false
       self.progressView.isHidden = true
-      self.displayName(with: CHAssets.unlocalized("file_upload.fail"))
+      self.displayName(with: CHAssets.localized("file_upload.fail"))
     } else if item.status == .progress {
       self.errorButton.isHidden = true
       self.progressView.isHidden = false
@@ -156,7 +156,7 @@ class FileStatusCell: BaseTableViewCell {
   
   private func displayCount(with count: Int) {
     self.countLabel.isHidden = count == 0
-    self.countLabel.text = CHAssets.unlocalized("file_upload.wait_count")
+    self.countLabel.text = String(format: CHAssets.localized("file_upload.wait_count"), "\(count)")
   }
   
   private func displayName(with name: String) {
