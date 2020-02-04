@@ -239,6 +239,18 @@ public final class ChannelIO: NSObject {
   }
 
   /**
+   *   Chnage prefersHomeIndicatorAuthHidden on rootViewController
+   */
+  @objc
+  public class func prefersHomeIndicatorAutoHidden(_ value: Bool) {
+    if let viewController = ChannelIO.launcherWindow?.rootViewController as? LuancherViewController,
+      #available(iOS 11.0, *) {
+      viewController.prefersAutoHidden = value
+      viewController.setNeedsUpdateOfHomeIndicatorAutoHidden()
+    }
+  }
+
+  /**
    *   Shutdown ChannelIO
    *   Call this method when user terminate session or logout
    */

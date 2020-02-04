@@ -5,6 +5,15 @@
 //  Created by Jam on 2019/12/11.
 //
 
+final class LuancherViewController: UIViewController {
+
+    var prefersAutoHidden: Bool = false
+
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return prefersAutoHidden
+    }
+}
+
 final class LauncherWindow: UIWindow {
   var launcherView: LauncherView?
   var inAppNotificationView: InAppNotification?
@@ -62,7 +71,7 @@ final class LauncherWindow: UIWindow {
   override func makeKey() {}
   
   private func initWindowSettings() {
-    self.rootViewController = UIViewController()
+    self.rootViewController = LuancherViewController()
     self.window?.backgroundColor = nil
     self.window?.isHidden = false
     self.windowLevel = UIWindow.Level(rawValue: CGFloat.greatestFiniteMagnitude)
